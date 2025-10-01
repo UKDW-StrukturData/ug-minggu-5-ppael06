@@ -6,11 +6,32 @@ def load_news(filename):
     """Baca file news_data.csv ke list of dict"""
     # TODO: buka file CSV (filename) dan baca dengan csv.DictReader
     # kembalikan hasilnya dalam bentuk list
+    newsFile = open('news_data.csv', 'r', newline='') 
+    bacanewsfile = csv.DictReader(newsFile)
+    idBerita = []
+    Headline = []
+    Content = []
+    for row in bacanewsfile:
+        idBerita.append(row['idberita'])
+        Headline.append(row['Headline'])
+        Content.append(row['Content'])
     pass
 
 def load_comments(filename):
     """Baca file comment_news.csv ke list of dict"""
     # TODO: sama seperti load_news tapi untuk file komentar
+
+    commentFile = open('comment_news.csv', 'r', newline='')
+    bacacommentfile = csv.DictReader(commentFile)
+    idKomentar = []
+    idBerita2 = []
+    Komentar = []
+    Rating = []
+    for row in bacacommentfile:
+        idKomentar.append(row['idKomentar'])
+        idBerita2.append(row['idBerita'])
+        Komentar.append(row['Komentar'])
+        Rating.append(row['Rating'])
     pass
 
 # --- Fungsi untuk memproses data ---
